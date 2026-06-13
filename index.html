@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Watch on TikTok</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0D0D0D;font-family:'Inter',sans-serif;overflow:hidden;position:relative}
+.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.35;animation:drift 8s ease-in-out infinite alternate;pointer-events:none}
+.blob-1{width:500px;height:500px;background:#FF2D55;top:-150px;left:-150px}
+.blob-2{width:400px;height:400px;background:#00F5FF;bottom:-100px;right:-100px;animation-delay:2s}
+.blob-3{width:300px;height:300px;background:#9B5DE5;top:40%;left:50%;animation-delay:4s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(30px,20px) scale(1.08)}}
+.card{position:relative;z-index:10;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);backdrop-filter:blur(20px);border-radius:28px;padding:52px 40px 44px;max-width:380px;width:90%;text-align:center;box-shadow:0 0 60px rgba(255,45,85,.2),0 0 120px rgba(0,245,255,.1)}
+.tiktok-icon{width:72px;height:72px;margin:0 auto 24px}
+.tiktok-icon svg{width:100%;height:100%;filter:drop-shadow(0 0 12px #FF2D55)}
+h1{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.04em;line-height:1;color:#fff;margin-bottom:8px}
+h1 span{background:linear-gradient(90deg,#FF2D55,#00F5FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.tagline{font-size:.95rem;color:rgba(255,255,255,.55);margin-bottom:36px;line-height:1.5}
+.cta{display:inline-block;width:100%;padding:18px 24px;background:linear-gradient(135deg,#FF2D55,#9B5DE5);color:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:1.05rem;text-decoration:none;border-radius:14px;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 32px rgba(255,45,85,.45);position:relative;overflow:hidden}
+.cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,45,85,.6)}
+.cta-wrap{position:relative;margin-bottom:28px}
+.pulse{position:absolute;inset:-4px;border-radius:18px;border:2px solid #FF2D55;animation:pulse 2s ease-out infinite;pointer-events:none}
+@keyframes pulse{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.06)}}
+.divider{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.divider hr{flex:1;border:none;border-top:1px solid rgba(255,255,255,.1)}
+.divider span{font-size:.75rem;color:rgba(255,255,255,.3)}
+.link-row{display:flex;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+.link-row span{flex:1;padding:11px 14px;font-size:.75rem;color:rgba(255,255,255,.4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}
+.copy-btn{padding:11px 16px;background:rgba(255,255,255,.08);border:none;border-left:1px solid rgba(255,255,255,.1);color:#00F5FF;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s;white-space:nowrap}
+.badge{display:inline-block;background:#FFE600;color:#0D0D0D;font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:16px}
+</style>
+</head>
+<body>
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+<div class="card">
+<div class="tiktok-icon">
+<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M34.2 5A11.8 11.8 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-6.2-6.2V5Z" fill="#FF2D55"/>
+<path d="M34.2 5v26.4a8.4 8.4 0 1 1-8.4-8.4c.77 0 1.52.1 2.24.3V17.5a14 14 0 1 0 11.56 13.7V10.6A17.4 17.4 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-5.6-3.56V5h-0.6Z" fill="#fff"/>
+</svg>
+</div>
+<div class="badge">🎬 Now Playing</div>
+<h1>Watch on<br/><span>TikTok</span></h1>
+<p class="tagline">Tap below to open the video<br/>directly in TikTok.</p>
+<div class="cta-wrap">
+<div class="pulse"></div>
+<a class="cta" href="https://pro.tiktok.com/t/ZT9jBEb3mH7eS-Wv5RF/" target="_blank">
+<span>▶&nbsp;&nbsp;Watch Now</span>
+</a>
+</div>
+<div class="divider"><hr/><span>or copy link</span><hr/></div>
+<div class="link-row">
+<span>pro.tiktok.com/t/ZT9jBEb3...</span>
+<button class="copy-btn" onclick="navigator.clipboard.writeText('https://pro.tiktok.com/t/ZT9jBEb3mH7eS-Wv5RF/').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000)})">Copy</button>
+</div>
+</div>
+</body>
+</html>
