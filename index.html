@@ -1,63 +1,449 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="background:#0D0D0D;">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Watch on TikTok</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap');
-*{box-sizing:border-box;margin:0;padding:0}
-body{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0D0D0D;font-family:'Inter',sans-serif;overflow:hidden;position:relative}
-.blob{position:fixed;border-radius:50%;filter:blur(80px);opacity:.35;animation:drift 8s ease-in-out infinite alternate;pointer-events:none}
-.blob-1{width:500px;height:500px;background:#FF2D55;top:-150px;left:-150px}
-.blob-2{width:400px;height:400px;background:#00F5FF;bottom:-100px;right:-100px;animation-delay:2s}
-.blob-3{width:300px;height:300px;background:#9B5DE5;top:40%;left:50%;animation-delay:4s}
-@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(30px,20px) scale(1.08)}}
-.card{position:relative;z-index:10;background:rgba(255,255,255,.05);border:1.5px solid rgba(255,255,255,.12);backdrop-filter:blur(20px);border-radius:28px;padding:52px 40px 44px;max-width:380px;width:90%;text-align:center;box-shadow:0 0 60px rgba(255,45,85,.2),0 0 120px rgba(0,245,255,.1)}
-.tiktok-icon{width:72px;height:72px;margin:0 auto 24px}
-.tiktok-icon svg{width:100%;height:100%;filter:drop-shadow(0 0 12px #FF2D55)}
-h1{font-family:'Bebas Neue',sans-serif;font-size:3rem;letter-spacing:.04em;line-height:1;color:#fff;margin-bottom:8px}
-h1 span{background:linear-gradient(90deg,#FF2D55,#00F5FF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.tagline{font-size:.95rem;color:rgba(255,255,255,.55);margin-bottom:36px;line-height:1.5}
-.cta{display:inline-block;width:100%;padding:18px 24px;background:linear-gradient(135deg,#FF2D55,#9B5DE5);color:#fff;font-family:'Inter',sans-serif;font-weight:800;font-size:1.05rem;text-decoration:none;border-radius:14px;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 32px rgba(255,45,85,.45);position:relative;overflow:hidden}
-.cta:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(255,45,85,.6)}
-.cta-wrap{position:relative;margin-bottom:28px}
-.pulse{position:absolute;inset:-4px;border-radius:18px;border:2px solid #FF2D55;animation:pulse 2s ease-out infinite;pointer-events:none}
-@keyframes pulse{0%{opacity:.6;transform:scale(1)}100%{opacity:0;transform:scale(1.06)}}
-.divider{display:flex;align-items:center;gap:12px;margin-bottom:24px}
-.divider hr{flex:1;border:none;border-top:1px solid rgba(255,255,255,.1)}
-.divider span{font-size:.75rem;color:rgba(255,255,255,.3)}
-.link-row{display:flex;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
-.link-row span{flex:1;padding:11px 14px;font-size:.75rem;color:rgba(255,255,255,.4);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:left}
-.copy-btn{padding:11px 16px;background:rgba(255,255,255,.08);border:none;border-left:1px solid rgba(255,255,255,.1);color:#00F5FF;font-size:.75rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:background .15s;white-space:nowrap}
-.badge{display:inline-block;background:#FFE600;color:#0D0D0D;font-size:.65rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:16px}
-</style>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TikTok Pro – Free Game With Real Prizes</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #0D0D0D !important;
+      font-family: 'Inter', sans-serif;
+      color: #FFFFFF;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .page {
+      max-width: 420px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── CONFETTI TOP ── */
+    .confetti-bar {
+      height: 8px;
+      background: linear-gradient(90deg,
+        #FF2D55 0%, #FF9500 15%, #FFD700 30%,
+        #34C759 45%, #007AFF 60%, #AF52DE 75%,
+        #FF2D55 100%);
+      background-size: 200% 100%;
+      animation: slide 3s linear infinite;
+    }
+    @keyframes slide {
+      from { background-position: 0% 0%; }
+      to   { background-position: 200% 0%; }
+    }
+
+    /* ── APP IDENTITY (App Store style) ── */
+    .app-section {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 28px 0 24px;
+    }
+    .app-icon-real {
+      width: 70px;
+      height: 70px;
+      background: #000;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      overflow: hidden;
+    }
+    .app-icon-real svg { width: 44px; height: 44px; }
+    .app-meta { flex: 1; }
+    .app-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .app-sub {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 6px;
+    }
+    .app-stars {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .stars-gold { color: #FFD700; letter-spacing: -1px; }
+
+    /* ── BIG HEADLINE ── */
+    .headline-block {
+      text-align: center;
+      padding: 8px 0 28px;
+    }
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2.8rem, 10vw, 4rem);
+      line-height: 0.95;
+      letter-spacing: 0.02em;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    h1 .pink  { color: #FF2D55; }
+    h1 .gold  { color: #FFD700; }
+    .intro-text {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+    }
+    .intro-text strong { color: #fff; }
+
+    /* ── DIVIDER ── */
+    hr { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 24px 0; }
+
+    /* ── HOW STARS WORK ── */
+    .section-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #69C9D0;
+      margin-bottom: 14px;
+    }
+
+    .info-card {
+      background: #181818;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 10px;
+      border: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .ic-emoji { font-size: 1.5rem; flex-shrink: 0; width: 36px; text-align: center; margin-top: 1px; }
+    .ic-body h3 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .ic-body p  { font-size: 0.78rem; color: rgba(255,255,255,0.48); line-height: 1.5; }
+    .ic-body p b { color: #FFD700; }
+
+    /* ── TROPHY RUSH GAME SECTION ── */
+    .game-section {
+      background: linear-gradient(180deg, #0A1A0A 0%, #071207 100%);
+      border-radius: 20px;
+      padding: 22px 20px;
+      margin: 8px 0 24px;
+      border: 1.5px solid rgba(50,200,50,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Confetti dots like in the game */
+    .game-section::before {
+      content: '🎊';
+      position: absolute;
+      top: 8px; left: 12px;
+      font-size: 1.2rem;
+      opacity: 0.6;
+    }
+    .game-section::after {
+      content: '🎊';
+      position: absolute;
+      top: 8px; right: 12px;
+      font-size: 1.2rem;
+      opacity: 0.6;
+    }
+
+    .game-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,215,0,0.12);
+      border: 1px solid rgba(255,215,0,0.3);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #FFD700;
+      margin-bottom: 12px;
+    }
+
+    .game-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.6rem;
+      letter-spacing: 0.05em;
+      color: #fff;
+      text-shadow: 0 0 30px rgba(255,215,0,0.4);
+      margin-bottom: 8px;
+      line-height: 1;
+    }
+    .game-title .trophy { color: #FFD700; }
+
+    .game-desc {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .game-desc b { color: #FFD700; }
+
+    /* Soccer goal grid like in the screenshots */
+    .goal-grid {
+      background: linear-gradient(180deg, #1a3a1a, #0d200d);
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 16px;
+      border: 2px solid rgba(255,255,255,0.1);
+    }
+    .goal-label {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .goal-slots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+    .slot {
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 10px 4px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .slot.highlight {
+      background: linear-gradient(135deg, #FF3B30, #FF6B35);
+      border-color: transparent;
+      box-shadow: 0 2px 10px rgba(255,59,48,0.4);
+    }
+    .slot .amount {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.03em;
+      color: #fff;
+      line-height: 1;
+    }
+    .slot .unit {
+      font-size: 0.55rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.05em;
+    }
+
+    /* Kick button like in game */
+    .kick-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #FF6B00, #FF3B00);
+      color: #fff;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(255,100,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2);
+      transition: transform 0.15s;
+    }
+    .kick-btn:active { transform: scale(0.97); }
+
+    /* ── PRIZES ── */
+    .prizes-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .prize-box {
+      background: #181818;
+      border-radius: 12px;
+      padding: 12px 6px;
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .prize-box .emoji { font-size: 1.3rem; display: block; margin-bottom: 5px; }
+    .prize-box span { font-size: 0.65rem; color: rgba(255,255,255,0.45); display: block; }
+    .prize-box strong { font-size: 0.75rem; color: #FFD700; display: block; }
+
+    /* ── MAIN CTA ── */
+    .cta-btn {
+      display: block;
+      width: 100%;
+      padding: 20px;
+      background: linear-gradient(135deg, #FF2D55, #FF0050);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 1rem;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 14px;
+      box-shadow: 0 8px 32px rgba(255,0,80,0.4);
+      transition: transform 0.15s;
+      margin-bottom: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+      animation: shimmer 2.2s ease-in-out infinite;
+    }
+    @keyframes shimmer {
+      0%   { left: -100%; }
+      100% { left: 200%; }
+    }
+    .cta-btn:active { transform: scale(0.98); }
+    .cta-note { text-align: center; font-size: 0.7rem; color: rgba(255,255,255,0.28); margin-top: 8px; }
+
+    .footer-note {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.2);
+      text-align: center;
+      line-height: 1.7;
+      margin-top: 32px;
+    }
+  </style>
 </head>
 <body>
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-<div class="blob blob-3"></div>
-<div class="card">
-<div class="tiktok-icon">
-<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M34.2 5A11.8 11.8 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-6.2-6.2V5Z" fill="#FF2D55"/>
-<path d="M34.2 5v26.4a8.4 8.4 0 1 1-8.4-8.4c.77 0 1.52.1 2.24.3V17.5a14 14 0 1 0 11.56 13.7V10.6A17.4 17.4 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-5.6-3.56V5h-0.6Z" fill="#fff"/>
-</svg>
-</div>
-<div class="badge">🎬 Now Playing</div>
-<h1>Watch on<br/><span>TikTok</span></h1>
-<p class="tagline">Tap below to open the video<br/>directly in TikTok.</p>
-<div class="cta-wrap">
-<div class="pulse"></div>
-<a class="cta" href="https://pro.tiktok.com/t/ZT9jBEb3mH7eS-Wv5RF/" target="_blank">
-<span>▶&nbsp;&nbsp;Watch Now</span>
-</a>
-</div>
-<div class="divider"><hr/><span>or copy link</span><hr/></div>
-<div class="link-row">
-<span>pro.tiktok.com/t/ZT9jBEb3...</span>
-<button class="copy-btn" onclick="navigator.clipboard.writeText('https://pro.tiktok.com/t/ZT9jBEb3mH7eS-Wv5RF/').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000)})">Copy</button>
-</div>
+
+<div class="confetti-bar"></div>
+
+<div class="page">
+
+  <!-- App Store style identity -->
+  <div class="app-section">
+    <div class="app-icon-real">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M34.2 5A11.8 11.8 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-6.2-6.2V5Z" fill="#FF2D55"/>
+        <path d="M34.2 5v26.4a8.4 8.4 0 1 1-8.4-8.4c.77 0 1.52.1 2.24.3V17.5a14 14 0 1 0 11.56 13.7V10.6A17.4 17.4 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-5.6-3.56V5h-.6Z" fill="#fff"/>
+        <path d="M34.2 5v26.4a8.4 8.4 0 1 1-8.4-8.4c.77 0 1.52.1 2.24.3V17.5a14 14 0 1 0 11.56 13.7V10.6A17.4 17.4 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-5.6-3.56V5h-.6Z" fill="url(#tg)" fill-opacity="0.3"/>
+        <defs>
+          <linearGradient id="tg" x1="2" y1="5" x2="46" y2="44" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#69C9D0"/>
+            <stop offset="1" stop-color="#FF2D55"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="app-meta">
+      <div class="app-title">TikTok Pro – Events</div>
+      <div class="app-sub">TikTok Ltd. · Free · 13+</div>
+      <div class="app-stars">
+        <span class="stars-gold">★★★★</span>
+        <span>3.9 · Entertainment</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Headline -->
+  <div class="headline-block">
+    <h1>TikTok Has a <span class="pink">Free Game</span> and You Can Win <span class="gold">Real Prizes</span></h1>
+    <p class="intro-text">A brand new app from TikTok called <strong>TikTok Pro – Events</strong> lets you earn stars by watching World Cup content — then spend them on coupons, jerseys, and more. Oh, and there's a soccer game inside.</p>
+  </div>
+
+  <hr/>
+
+  <!-- How it works -->
+  <div class="section-label">How the rewards work</div>
+
+  <div class="info-card">
+    <div class="ic-emoji">⭐</div>
+    <div class="ic-body">
+      <h3>Earn Stars Easily</h3>
+      <p>Watch FIFA videos, follow creators, explore trending hashtags — each activity earns you <b>thousands of stars</b> automatically.</p>
+    </div>
+  </div>
+
+  <div class="info-card">
+    <div class="ic-emoji">🛍️</div>
+    <div class="ic-body">
+      <h3>Redeem for Real Value</h3>
+      <p>Turn stars into <b>TikTok Shop coupons</b> worth $1 to $100 off, or trade for official FIFA World Cup merchandise.</p>
+    </div>
+  </div>
+
+  <hr/>
+
+  <!-- Trophy Rush Game Section -->
+  <div class="game-section">
+    <div class="game-badge">🎮 Mini Game Inside the App</div>
+    <div class="game-title"><span class="trophy">🏆</span> TROPHY RUSH</div>
+    <p class="game-desc">Kick a soccer ball into the goal and land on a prize square. Every kick wins something — from <b>10K to 1,000,000 stars</b>. The more you play, the more you earn.</p>
+
+    <!-- Goal grid matching screenshots -->
+    <div class="goal-grid">
+      <div class="goal-label">⚽ Prize Board</div>
+      <div class="goal-slots">
+        <div class="slot"><div class="amount">350K</div><div class="unit">stars</div></div>
+        <div class="slot"><div class="amount">10K</div><div class="unit">stars</div></div>
+        <div class="slot"><div class="amount">100K</div><div class="unit">stars</div></div>
+        <div class="slot"><div class="amount">150K</div><div class="unit">stars</div></div>
+        <div class="slot highlight"><div class="amount">30K</div><div class="unit">stars</div></div>
+        <div class="slot"><div class="amount">1,000K</div><div class="unit">stars</div></div>
+        <div class="slot"><div class="amount">70K</div><div class="unit">stars</div></div>
+        <div class="slot"><div class="amount">750K</div><div class="unit">stars</div></div>
+        <div class="slot"><div class="amount">130K</div><div class="unit">stars</div></div>
+        <div class="slot"><div class="amount">80K</div><div class="unit">stars</div></div>
+        <div class="slot"><div class="amount">200K</div><div class="unit">stars</div></div>
+        <div class="slot highlight"><div class="amount">20K</div><div class="unit">stars</div></div>
+      </div>
+    </div>
+
+    <a class="kick-btn" href="https://pro.tiktok.com/t/ZT9jBEb3mH7eS-Wv5RF/" target="_blank" rel="noopener">
+      ⚽ PLAY NOW — IT'S FREE
+    </a>
+  </div>
+
+  <!-- Prizes -->
+  <div class="section-label">What you can win</div>
+  <div class="prizes-row">
+    <div class="prize-box">
+      <span class="emoji">🛍️</span>
+      <strong>$1–$100</strong>
+      <span>Shop coupons</span>
+    </div>
+    <div class="prize-box">
+      <span class="emoji">👕</span>
+      <strong>Jersey</strong>
+      <span>FIFA merch</span>
+    </div>
+    <div class="prize-box">
+      <span class="emoji">🎟️</span>
+      <strong>Tickets</strong>
+      <span>World Cup</span>
+    </div>
+    <div class="prize-box">
+      <span class="emoji">🎧</span>
+      <strong>Headphones</strong>
+      <span>& more</span>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <a class="cta-btn" href="https://pro.tiktok.com/t/ZT9jBEb3mH7eS-Wv5RF/" target="_blank" rel="noopener">
+    Download TikTok Pro — Free →
+  </a>
+  <p class="cta-note">Free · iPhone & Android · No subscription needed</p>
+
+  <p class="footer-note">
+    TikTok Pro – Events is an official app by TikTok Ltd.<br/>
+    Stars and prizes subject to availability and TikTok's campaign terms.
+  </p>
+
 </div>
 </body>
 </html>
