@@ -3,291 +3,210 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TikTok Pro – Free Game With Real Prizes</title>
+  <title>✨ TikTok Pro – Win Real Prizes! ✨</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;600;700;900&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
       background: #0D0D0D !important;
       font-family: 'Inter', sans-serif;
-      color: #FFFFFF;
+      color: #fff;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    .page {
-      max-width: 420px;
-      margin: 0 auto;
-      padding: 0 20px 60px;
+    /* ── RAINBOW TOP BAR ── */
+    .rainbow-bar {
+      height: 6px;
+      background: linear-gradient(90deg, #FF2D55, #FF9500, #FFD700, #34C759, #007AFF, #AF52DE, #FF2D55);
+      background-size: 200%;
+      animation: rainbow 3s linear infinite;
     }
-
-    /* ── CONFETTI TOP ── */
-    .confetti-bar {
-      height: 8px;
-      background: linear-gradient(90deg,
-        #FF2D55 0%, #FF9500 15%, #FFD700 30%,
-        #34C759 45%, #007AFF 60%, #AF52DE 75%,
-        #FF2D55 100%);
-      background-size: 200% 100%;
-      animation: slide 3s linear infinite;
-    }
-    @keyframes slide {
+    @keyframes rainbow {
       from { background-position: 0% 0%; }
       to   { background-position: 200% 0%; }
     }
 
-    /* ── APP IDENTITY (App Store style) ── */
-    .app-section {
+    /* ── FLOATING STARS ── */
+    .stars-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .star {
+      position: absolute;
+      font-size: 1rem;
+      animation: floatUp linear infinite;
+      opacity: 0;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 1; }
+      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* ── PAGE ── */
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+      text-align: center;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 36px 0 28px;
+    }
+    .big-sparkle {
+      font-size: 3.5rem;
+      display: block;
+      margin-bottom: 8px;
+      animation: sparkle 1.5s ease-in-out infinite;
+    }
+    @keyframes sparkle {
+      0%, 100% { transform: scale(1) rotate(-5deg); }
+      50%       { transform: scale(1.15) rotate(5deg); }
+    }
+
+    h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: clamp(2rem, 9vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #FF2D55, #FF9500, #FFD700, #34C759, #007AFF, #AF52DE);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      background-size: 200%;
+      animation: rainbow 3s linear infinite;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .subtitle strong { color: #fff; }
+
+    /* ── PRIZE PILLS ── */
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .pill {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 30px;
+      padding: 8px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #fff;
       display: flex;
       align-items: center;
-      gap: 14px;
-      padding: 28px 0 24px;
+      gap: 6px;
     }
-    .app-icon-real {
-      width: 70px;
-      height: 70px;
-      background: #000;
-      border-radius: 16px;
+    .pill.pink   { border-color: rgba(255,45,85,0.4);   background: rgba(255,45,85,0.1); }
+    .pill.yellow { border-color: rgba(255,215,0,0.4);   background: rgba(255,215,0,0.1); color: #FFD700; }
+    .pill.green  { border-color: rgba(52,199,89,0.4);   background: rgba(52,199,89,0.1); color: #34C759; }
+    .pill.blue   { border-color: rgba(0,122,255,0.4);   background: rgba(0,122,255,0.1); color: #5AC8FA; }
+    .pill.purple { border-color: rgba(175,82,222,0.4);  background: rgba(175,82,222,0.1); color: #BF5AF2; }
+
+    /* ── HOW IT WORKS ── */
+    .steps-wrap {
+      background: #181818;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,255,255,0.07);
+      text-align: left;
+    }
+    .steps-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-weight: 900;
+      font-size: 0.85rem;
       flex-shrink: 0;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.6);
-      overflow: hidden;
     }
-    .app-icon-real svg { width: 44px; height: 44px; }
-    .app-meta { flex: 1; }
-    .app-title {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 2px;
-    }
-    .app-sub {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 6px;
-    }
-    .app-stars {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      font-size: 0.7rem;
-      color: rgba(255,255,255,0.4);
-    }
-    .stars-gold { color: #FFD700; letter-spacing: -1px; }
+    .step:nth-child(1) .step-num { background: #FF2D55; }
+    .step:nth-child(2) .step-num { background: #FF9500; }
+    .step:nth-child(3) .step-num { background: #FFD700; color: #000; }
+    .step:nth-child(4) .step-num { background: #34C759; color: #000; }
+    .step-text { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.4; }
+    .step-text b { color: #fff; }
 
-    /* ── BIG HEADLINE ── */
-    .headline-block {
-      text-align: center;
-      padding: 8px 0 28px;
-    }
-    h1 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(2.8rem, 10vw, 4rem);
-      line-height: 0.95;
-      letter-spacing: 0.02em;
-      margin-bottom: 14px;
-      color: #fff;
-    }
-    h1 .pink  { color: #FF2D55; }
-    h1 .gold  { color: #FFD700; }
-    .intro-text {
-      font-size: 0.92rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.65;
-    }
-    .intro-text strong { color: #fff; }
-
-    /* ── DIVIDER ── */
-    hr { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 24px 0; }
-
-    /* ── HOW STARS WORK ── */
-    .section-label {
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #69C9D0;
-      margin-bottom: 14px;
-    }
-
-    .info-card {
-      background: #181818;
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 10px;
-      border: 1px solid rgba(255,255,255,0.07);
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-    }
-    .ic-emoji { font-size: 1.5rem; flex-shrink: 0; width: 36px; text-align: center; margin-top: 1px; }
-    .ic-body h3 { font-size: 0.9rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
-    .ic-body p  { font-size: 0.78rem; color: rgba(255,255,255,0.48); line-height: 1.5; }
-    .ic-body p b { color: #FFD700; }
-
-    /* ── TROPHY RUSH GAME SECTION ── */
-    .game-section {
-      background: linear-gradient(180deg, #0A1A0A 0%, #071207 100%);
+    /* ── GAME CARD ── */
+    .game-card {
+      background: linear-gradient(135deg, #1a0a2e, #0d1a0d);
       border-radius: 20px;
       padding: 22px 20px;
-      margin: 8px 0 24px;
-      border: 1.5px solid rgba(50,200,50,0.2);
+      margin-bottom: 24px;
+      border: 1px solid rgba(175,82,222,0.2);
       position: relative;
       overflow: hidden;
     }
-
-    /* Confetti dots like in the game */
-    .game-section::before {
-      content: '🎊';
-      position: absolute;
-      top: 8px; left: 12px;
-      font-size: 1.2rem;
-      opacity: 0.6;
-    }
-    .game-section::after {
-      content: '🎊';
-      position: absolute;
-      top: 8px; right: 12px;
-      font-size: 1.2rem;
-      opacity: 0.6;
-    }
-
-    .game-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,215,0,0.12);
-      border: 1px solid rgba(255,215,0,0.3);
-      border-radius: 20px;
-      padding: 4px 12px;
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #FFD700;
-      margin-bottom: 12px;
-    }
-
-    .game-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.6rem;
-      letter-spacing: 0.05em;
-      color: #fff;
-      text-shadow: 0 0 30px rgba(255,215,0,0.4);
+    .game-sparkles {
+      font-size: 1.4rem;
       margin-bottom: 8px;
-      line-height: 1;
+      display: block;
+      letter-spacing: 4px;
     }
-    .game-title .trophy { color: #FFD700; }
-
+    .game-title {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.8rem;
+      color: #FFD700;
+      margin-bottom: 6px;
+      text-shadow: 0 0 20px rgba(255,215,0,0.4);
+    }
     .game-desc {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       color: rgba(255,255,255,0.55);
-      line-height: 1.6;
-      margin-bottom: 18px;
+      line-height: 1.55;
     }
     .game-desc b { color: #FFD700; }
 
-    /* Soccer goal grid like in the screenshots */
-    .goal-grid {
-      background: linear-gradient(180deg, #1a3a1a, #0d200d);
-      border-radius: 14px;
-      padding: 14px;
-      margin-bottom: 16px;
-      border: 2px solid rgba(255,255,255,0.1);
-    }
-    .goal-label {
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      text-align: center;
-      margin-bottom: 10px;
-    }
-    .goal-slots {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 6px;
-    }
-    .slot {
-      background: rgba(255,255,255,0.08);
-      border-radius: 8px;
-      padding: 10px 4px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-    .slot.highlight {
-      background: linear-gradient(135deg, #FF3B30, #FF6B35);
-      border-color: transparent;
-      box-shadow: 0 2px 10px rgba(255,59,48,0.4);
-    }
-    .slot .amount {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.03em;
-      color: #fff;
-      line-height: 1;
-    }
-    .slot .unit {
-      font-size: 0.55rem;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.05em;
-    }
-
-    /* Kick button like in game */
-    .kick-btn {
-      display: block;
-      width: 100%;
-      padding: 16px;
-      background: linear-gradient(135deg, #FF6B00, #FF3B00);
-      color: #fff;
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 1.6rem;
-      letter-spacing: 0.1em;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(255,100,0,0.5), inset 0 1px 0 rgba(255,255,255,0.2);
-      transition: transform 0.15s;
-    }
-    .kick-btn:active { transform: scale(0.97); }
-
-    /* ── PRIZES ── */
-    .prizes-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
-      margin-bottom: 28px;
-    }
-    .prize-box {
-      background: #181818;
-      border-radius: 12px;
-      padding: 12px 6px;
-      text-align: center;
-      border: 1px solid rgba(255,255,255,0.07);
-    }
-    .prize-box .emoji { font-size: 1.3rem; display: block; margin-bottom: 5px; }
-    .prize-box span { font-size: 0.65rem; color: rgba(255,255,255,0.45); display: block; }
-    .prize-box strong { font-size: 0.75rem; color: #FFD700; display: block; }
-
-    /* ── MAIN CTA ── */
+    /* ── BIG CTA ── */
     .cta-btn {
       display: block;
       width: 100%;
       padding: 20px;
-      background: linear-gradient(135deg, #FF2D55, #FF0050);
+      background: linear-gradient(135deg, #FF2D55, #AF52DE);
       color: #fff;
-      font-family: 'Inter', sans-serif;
-      font-weight: 900;
-      font-size: 1rem;
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.4rem;
+      letter-spacing: 0.02em;
       text-align: center;
       text-decoration: none;
-      border-radius: 14px;
-      box-shadow: 0 8px 32px rgba(255,0,80,0.4);
+      border-radius: 50px;
+      box-shadow: 0 8px 32px rgba(255,45,85,0.4);
       transition: transform 0.15s;
       margin-bottom: 10px;
       position: relative;
@@ -299,150 +218,96 @@
       top: 0; left: -100%;
       width: 60%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-      animation: shimmer 2.2s ease-in-out infinite;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      animation: shimmer 2s ease-in-out infinite;
     }
     @keyframes shimmer {
       0%   { left: -100%; }
       100% { left: 200%; }
     }
-    .cta-btn:active { transform: scale(0.98); }
-    .cta-note { text-align: center; font-size: 0.7rem; color: rgba(255,255,255,0.28); margin-top: 8px; }
+    .cta-btn:active { transform: scale(0.97); }
+    .cta-note { font-size: 0.7rem; color: rgba(255,255,255,0.3); }
 
-    .footer-note {
-      font-size: 0.68rem;
-      color: rgba(255,255,255,0.2);
-      text-align: center;
-      line-height: 1.7;
+    .footer {
       margin-top: 32px;
+      font-size: 0.65rem;
+      color: rgba(255,255,255,0.2);
+      line-height: 1.7;
     }
   </style>
 </head>
 <body>
 
-<div class="confetti-bar"></div>
+<div class="rainbow-bar"></div>
+
+<!-- Floating stars background -->
+<div class="stars-bg">
+  <div class="star" style="left:5%;  animation-duration:6s;  animation-delay:0s;  font-size:0.8rem;">✨</div>
+  <div class="star" style="left:15%; animation-duration:8s;  animation-delay:1s;">⭐</div>
+  <div class="star" style="left:25%; animation-duration:7s;  animation-delay:2s;  font-size:0.7rem;">✨</div>
+  <div class="star" style="left:40%; animation-duration:9s;  animation-delay:0.5s;">🌟</div>
+  <div class="star" style="left:55%; animation-duration:6s;  animation-delay:3s;  font-size:0.8rem;">✨</div>
+  <div class="star" style="left:65%; animation-duration:8s;  animation-delay:1.5s;">⭐</div>
+  <div class="star" style="left:75%; animation-duration:7s;  animation-delay:2.5s;">🌟</div>
+  <div class="star" style="left:88%; animation-duration:9s;  animation-delay:0.8s; font-size:0.7rem;">✨</div>
+</div>
 
 <div class="page">
 
-  <!-- App Store style identity -->
-  <div class="app-section">
-    <div class="app-icon-real">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M34.2 5A11.8 11.8 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-6.2-6.2V5Z" fill="#FF2D55"/>
-        <path d="M34.2 5v26.4a8.4 8.4 0 1 1-8.4-8.4c.77 0 1.52.1 2.24.3V17.5a14 14 0 1 0 11.56 13.7V10.6A17.4 17.4 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-5.6-3.56V5h-.6Z" fill="#fff"/>
-        <path d="M34.2 5v26.4a8.4 8.4 0 1 1-8.4-8.4c.77 0 1.52.1 2.24.3V17.5a14 14 0 1 0 11.56 13.7V10.6A17.4 17.4 0 0 0 46 16.8h-5.6a6.2 6.2 0 0 1-5.6-3.56V5h-.6Z" fill="url(#tg)" fill-opacity="0.3"/>
-        <defs>
-          <linearGradient id="tg" x1="2" y1="5" x2="46" y2="44" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#69C9D0"/>
-            <stop offset="1" stop-color="#FF2D55"/>
-          </linearGradient>
-        </defs>
-      </svg>
-    </div>
-    <div class="app-meta">
-      <div class="app-title">TikTok Pro – Events</div>
-      <div class="app-sub">TikTok Ltd. · Free · 13+</div>
-      <div class="app-stars">
-        <span class="stars-gold">★★★★</span>
-        <span>3.9 · Entertainment</span>
-      </div>
-    </div>
+  <!-- Hero -->
+  <div class="hero">
+    <span class="big-sparkle">✨⚽✨</span>
+    <h1>Win Real Prizes Playing TikTok's New Game!</h1>
+    <p class="subtitle">There's a brand new free app from TikTok called <strong>TikTok Pro – Events</strong> and it literally gives you prizes for playing a soccer game. No catch. No cost. Just fun!</p>
   </div>
 
-  <!-- Headline -->
-  <div class="headline-block">
-    <h1>TikTok Has a <span class="pink">Free Game</span> and You Can Win <span class="gold">Real Prizes</span></h1>
-    <p class="intro-text">A brand new app from TikTok called <strong>TikTok Pro – Events</strong> lets you earn stars by watching World Cup content — then spend them on coupons, jerseys, and more. Oh, and there's a soccer game inside.</p>
+  <!-- Prize pills -->
+  <div class="pills">
+    <div class="pill yellow">🏆 Up to 1M Stars</div>
+    <div class="pill pink">🛍️ $1–$100 Coupons</div>
+    <div class="pill green">👕 FIFA Jerseys</div>
+    <div class="pill blue">🎟️ World Cup Tickets</div>
+    <div class="pill purple">🎧 Headphones & More</div>
   </div>
-
-  <hr/>
 
   <!-- How it works -->
-  <div class="section-label">How the rewards work</div>
-
-  <div class="info-card">
-    <div class="ic-emoji">⭐</div>
-    <div class="ic-body">
-      <h3>Earn Stars Easily</h3>
-      <p>Watch FIFA videos, follow creators, explore trending hashtags — each activity earns you <b>thousands of stars</b> automatically.</p>
+  <div class="steps-wrap">
+    <div class="steps-title">✨ Here's How It Works ✨</div>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text"><b>Download TikTok Pro – Events</b> for free on iPhone or Android</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text"><b>Earn stars</b> by watching FIFA World Cup videos and completing easy tasks</div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><b>Play Trophy Rush</b> — kick a soccer ball and win up to 1,000,000 stars per kick!</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text"><b>Redeem your stars</b> for real coupons, jerseys, tickets and more 🎉</div>
     </div>
   </div>
 
-  <div class="info-card">
-    <div class="ic-emoji">🛍️</div>
-    <div class="ic-body">
-      <h3>Redeem for Real Value</h3>
-      <p>Turn stars into <b>TikTok Shop coupons</b> worth $1 to $100 off, or trade for official FIFA World Cup merchandise.</p>
-    </div>
-  </div>
-
-  <hr/>
-
-  <!-- Trophy Rush Game Section -->
-  <div class="game-section">
-    <div class="game-badge">🎮 Mini Game Inside the App</div>
-    <div class="game-title"><span class="trophy">🏆</span> TROPHY RUSH</div>
-    <p class="game-desc">Kick a soccer ball into the goal and land on a prize square. Every kick wins something — from <b>10K to 1,000,000 stars</b>. The more you play, the more you earn.</p>
-
-    <!-- Goal grid matching screenshots -->
-    <div class="goal-grid">
-      <div class="goal-label">⚽ Prize Board</div>
-      <div class="goal-slots">
-        <div class="slot"><div class="amount">350K</div><div class="unit">stars</div></div>
-        <div class="slot"><div class="amount">10K</div><div class="unit">stars</div></div>
-        <div class="slot"><div class="amount">100K</div><div class="unit">stars</div></div>
-        <div class="slot"><div class="amount">150K</div><div class="unit">stars</div></div>
-        <div class="slot highlight"><div class="amount">30K</div><div class="unit">stars</div></div>
-        <div class="slot"><div class="amount">1,000K</div><div class="unit">stars</div></div>
-        <div class="slot"><div class="amount">70K</div><div class="unit">stars</div></div>
-        <div class="slot"><div class="amount">750K</div><div class="unit">stars</div></div>
-        <div class="slot"><div class="amount">130K</div><div class="unit">stars</div></div>
-        <div class="slot"><div class="amount">80K</div><div class="unit">stars</div></div>
-        <div class="slot"><div class="amount">200K</div><div class="unit">stars</div></div>
-        <div class="slot highlight"><div class="amount">20K</div><div class="unit">stars</div></div>
-      </div>
-    </div>
-
-    <a class="kick-btn" href="https://pro.tiktok.com/t/ZT9jBEb3mH7eS-Wv5RF/" target="_blank" rel="noopener">
-      ⚽ PLAY NOW — IT'S FREE
-    </a>
-  </div>
-
-  <!-- Prizes -->
-  <div class="section-label">What you can win</div>
-  <div class="prizes-row">
-    <div class="prize-box">
-      <span class="emoji">🛍️</span>
-      <strong>$1–$100</strong>
-      <span>Shop coupons</span>
-    </div>
-    <div class="prize-box">
-      <span class="emoji">👕</span>
-      <strong>Jersey</strong>
-      <span>FIFA merch</span>
-    </div>
-    <div class="prize-box">
-      <span class="emoji">🎟️</span>
-      <strong>Tickets</strong>
-      <span>World Cup</span>
-    </div>
-    <div class="prize-box">
-      <span class="emoji">🎧</span>
-      <strong>Headphones</strong>
-      <span>& more</span>
-    </div>
+  <!-- Game card -->
+  <div class="game-card">
+    <span class="game-sparkles">✨ 🏆 ✨</span>
+    <div class="game-title">Trophy Rush</div>
+    <p class="game-desc">Kick the ball into the goal and land on a prize square. Every single kick wins something — from <b>10,000 to 1,000,000 stars</b>. It's free, it's fast, and it's actually so fun!</p>
   </div>
 
   <!-- CTA -->
-  <a class="cta-btn" href="https://pro.tiktok.com/t/ZT9jBEb3mH7eS-Wv5RF/" target="_blank" rel="noopener">
-    Download TikTok Pro — Free →
+  <a class="cta-btn" href="https://pro.tiktok.com/t/ZT9juq9gkDG4V-cP8Ul/" target="_blank" rel="noopener">
+    ✨ Get It Free Now! ✨
   </a>
-  <p class="cta-note">Free · iPhone & Android · No subscription needed</p>
+  <p class="cta-note">Free to download · No credit card · iPhone & Android</p>
 
-  <p class="footer-note">
+  <div class="footer">
     TikTok Pro – Events is an official app by TikTok Ltd.<br/>
-    Stars and prizes subject to availability and TikTok's campaign terms.
-  </p>
+    Stars and prizes subject to TikTok's campaign terms and availability.
+  </div>
 
 </div>
 </body>
