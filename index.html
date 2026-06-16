@@ -304,9 +304,29 @@
   </a>
   <p class="cta-note">Free to download · No credit card · iPhone & Android</p>
 
-  <div style="margin-top:24px; margin-bottom:8px;">
-    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fsunnyduhlight.github.io&count_bg=%23FF2D55&title_bg=%23AF52DE&icon_color=%23FFFFFF&title=visitors&edge_flat=true" alt="Visitor Count" style="border-radius:4px;"/>
+  <div style="margin-top:24px; margin-bottom:8px; display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:30px; padding:8px 18px;">
+    <span style="font-size:1rem;">👁️</span>
+    <span style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Visitors today:</span>
+    <span id="visit-count" style="font-size:0.9rem; font-weight:700; color:#FF2D55;">...</span>
   </div>
+
+  <script>
+    // Simple session-based counter using localStorage
+    try {
+      const today = new Date().toDateString();
+      const key = 'visit_' + today;
+      let count = parseInt(localStorage.getItem(key) || '0');
+      // Only count once per session
+      if (!sessionStorage.getItem('counted')) {
+        count++;
+        localStorage.setItem(key, count);
+        sessionStorage.setItem('counted', '1');
+      }
+      document.getElementById('visit-count').textContent = count;
+    } catch(e) {
+      document.getElementById('visit-count').textContent = '✨';
+    }
+  </script>
 
   <div class="footer">
     TikTok Pro – Events is an official app by TikTok Ltd.<br/>
