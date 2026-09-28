@@ -1,347 +1,310 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#0D0D0D;">
+<html lang="en" style="background:#0A0A1A;">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RDM0YNJ9L3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RDM0YNJ9L3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-RDM0YNJ9L3');
+  </script>
 
-  gtag('config', 'G-RDM0YNJ9L3');
-</script>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>✨ TikTok Pro – Win Real Prizes! ✨</title>
+  <title>Race to #1 – Win Stars & Amazon Gift Cards!</title>
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;600;700;900&display=swap');
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
-      background: #0D0D0D !important;
+      background: #0A0A1A !important;
       font-family: 'Inter', sans-serif;
       color: #fff;
       min-height: 100vh;
       overflow-x: hidden;
     }
 
-    /* ── RAINBOW TOP BAR ── */
-    .rainbow-bar {
-      height: 6px;
-      background: linear-gradient(90deg, #FF2D55, #FF9500, #FFD700, #34C759, #007AFF, #AF52DE, #FF2D55);
-      background-size: 200%;
-      animation: rainbow 3s linear infinite;
-    }
-    @keyframes rainbow {
-      from { background-position: 0% 0%; }
-      to   { background-position: 200% 0%; }
-    }
-
-    /* ── FLOATING STARS ── */
-    .stars-bg {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 0;
-    }
-    .star {
-      position: absolute;
-      font-size: 1rem;
-      animation: floatUp linear infinite;
-      opacity: 0;
-    }
-    @keyframes floatUp {
-      0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      10%  { opacity: 1; }
-      90%  { opacity: 1; }
-      100% { transform: translateY(-20vh) rotate(360deg); opacity: 0; }
-    }
-
-    /* ── PAGE ── */
     .page {
-      position: relative;
-      z-index: 1;
-      max-width: 400px;
+      max-width: 420px;
       margin: 0 auto;
-      padding: 0 20px 60px;
+      padding: 0 18px 60px;
       text-align: center;
     }
 
-    /* ── HERO ── */
-    .hero {
-      padding: 36px 0 28px;
-    }
-    .big-sparkle {
-      font-size: 3.5rem;
-      display: block;
-      margin-bottom: 8px;
-      animation: sparkle 1.5s ease-in-out infinite;
-    }
-    @keyframes sparkle {
-      0%, 100% { transform: scale(1) rotate(-5deg); }
-      50%       { transform: scale(1.15) rotate(5deg); }
+    /* Top banner */
+    .top-banner {
+      background: linear-gradient(180deg, #1a0a3a 0%, #0A0A1A 100%);
+      padding: 28px 16px 20px;
+      position: relative;
+      overflow: hidden;
     }
 
-    h1 {
+    .event-title {
       font-family: 'Fredoka One', cursive;
-      font-size: clamp(2rem, 9vw, 3rem);
-      line-height: 1.15;
-      margin-bottom: 12px;
-      background: linear-gradient(135deg, #FF2D55, #FF9500, #FFD700, #34C759, #007AFF, #AF52DE);
+      font-size: clamp(2.4rem, 11vw, 3.2rem);
+      line-height: 1.05;
+      background: linear-gradient(90deg, #00FF9D, #00E0FF, #FF00E5);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      background-size: 200%;
-      animation: rainbow 3s linear infinite;
+      margin-bottom: 8px;
+      text-shadow: 0 0 30px rgba(0,255,157,0.4);
     }
 
     .subtitle {
       font-size: 0.95rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
-      margin-bottom: 28px;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.5;
+      margin-bottom: 14px;
     }
-    .subtitle strong { color: #fff; }
 
-    /* ── PRIZE PILLS ── */
-    .pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      margin-bottom: 28px;
-    }
-    .pill {
+    .ends-badge {
+      display: inline-block;
       background: rgba(255,255,255,0.08);
       border: 1px solid rgba(255,255,255,0.15);
       border-radius: 30px;
-      padding: 8px 16px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      padding: 6px 16px;
+      font-size: 0.8rem;
+      color: #00FF9D;
+      margin-bottom: 20px;
     }
-    .pill.pink   { border-color: rgba(255,45,85,0.4);   background: rgba(255,45,85,0.1); }
-    .pill.yellow { border-color: rgba(255,215,0,0.4);   background: rgba(255,215,0,0.1); color: #FFD700; }
-    .pill.green  { border-color: rgba(52,199,89,0.4);   background: rgba(52,199,89,0.1); color: #34C759; }
-    .pill.blue   { border-color: rgba(0,122,255,0.4);   background: rgba(0,122,255,0.1); color: #5AC8FA; }
-    .pill.purple { border-color: rgba(175,82,222,0.4);  background: rgba(175,82,222,0.1); color: #BF5AF2; }
 
-    /* ── HOW IT WORKS ── */
-    .steps-wrap {
-      background: #181818;
+    /* Rewards podium */
+    .podium {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 10px;
+      margin: 24px 0 28px;
+    }
+
+    .podium-item {
+      background: rgba(255,255,255,0.06);
+      border-radius: 16px;
+      padding: 14px 10px;
+      width: 30%;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .podium-item.center {
+      background: linear-gradient(180deg, rgba(0,255,157,0.15), rgba(0,0,0,0.3));
+      border-color: rgba(0,255,157,0.4);
+      transform: scale(1.08);
+      padding: 18px 10px;
+    }
+
+    .podium-rank {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+
+    .podium-stars {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.15rem;
+      color: #00FF9D;
+    }
+
+    /* Flag rewards grid */
+    .flags-section {
+      background: #12122A;
       border-radius: 20px;
-      padding: 20px;
+      padding: 20px 16px;
       margin-bottom: 24px;
-      border: 1px solid rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.08);
       text-align: left;
     }
-    .steps-title {
+
+    .section-title {
       font-family: 'Fredoka One', cursive;
-      font-size: 1.1rem;
-      color: #fff;
-      margin-bottom: 14px;
+      font-size: 1.25rem;
       text-align: center;
+      margin-bottom: 16px;
+      color: #fff;
     }
+
+    .flag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .flag-row:last-child { border-bottom: none; }
+
+    .flag-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+    }
+
+    .flag-value {
+      font-weight: 700;
+      color: #00FF9D;
+      font-size: 1rem;
+    }
+
+    /* How it works */
+    .steps {
+      background: #12122A;
+      border-radius: 20px;
+      padding: 20px 16px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(255,255,255,0.08);
+      text-align: left;
+    }
+
     .step {
       display: flex;
-      align-items: center;
       gap: 12px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
+      align-items: flex-start;
     }
+
     .step:last-child { margin-bottom: 0; }
+
     .step-num {
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
+      background: linear-gradient(135deg, #00FF9D, #00B4FF);
+      color: #000;
+      font-weight: 900;
+      font-size: 0.85rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 900;
-      font-size: 0.85rem;
       flex-shrink: 0;
     }
-    .step:nth-child(1) .step-num { background: #FF2D55; }
-    .step:nth-child(2) .step-num { background: #FF9500; }
-    .step:nth-child(3) .step-num { background: #FFD700; color: #000; }
-    .step:nth-child(4) .step-num { background: #34C759; color: #000; }
-    .step-text { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.4; }
-    .step-text b { color: #fff; }
 
-    /* ── GAME CARD ── */
-    .game-card {
-      background: linear-gradient(135deg, #1a0a2e, #0d1a0d);
-      border-radius: 20px;
-      padding: 22px 20px;
-      margin-bottom: 24px;
-      border: 1px solid rgba(175,82,222,0.2);
-      position: relative;
-      overflow: hidden;
+    .step-text {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.45;
     }
-    .game-sparkles {
-      font-size: 1.4rem;
-      margin-bottom: 8px;
-      display: block;
-      letter-spacing: 4px;
-    }
-    .game-title {
-      font-family: 'Fredoka One', cursive;
-      font-size: 1.8rem;
-      color: #FFD700;
-      margin-bottom: 6px;
-      text-shadow: 0 0 20px rgba(255,215,0,0.4);
-    }
-    .game-desc {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.55;
-    }
-    .game-desc b { color: #FFD700; }
 
-    /* ── BIG CTA ── */
+    /* Big CTA */
     .cta-btn {
       display: block;
       width: 100%;
-      padding: 20px;
-      background: linear-gradient(135deg, #FF2D55, #AF52DE);
-      color: #fff;
+      padding: 18px;
+      background: linear-gradient(90deg, #00FF9D, #00E0FF);
+      color: #000;
       font-family: 'Fredoka One', cursive;
-      font-size: 1.4rem;
-      letter-spacing: 0.02em;
+      font-size: 1.35rem;
       text-align: center;
       text-decoration: none;
       border-radius: 50px;
-      box-shadow: 0 8px 32px rgba(255,45,85,0.4);
+      box-shadow: 0 8px 30px rgba(0,255,157,0.35);
+      margin-bottom: 12px;
       transition: transform 0.15s;
-      margin-bottom: 10px;
-      position: relative;
-      overflow: hidden;
     }
-    .cta-btn::after {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      animation: shimmer 2s ease-in-out infinite;
-    }
-    @keyframes shimmer {
-      0%   { left: -100%; }
-      100% { left: 200%; }
-    }
+
     .cta-btn:active { transform: scale(0.97); }
-    .cta-note { font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+
+    .cta-note {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 30px;
+    }
 
     .footer {
-      margin-top: 32px;
       font-size: 0.65rem;
-      color: rgba(255,255,255,0.2);
-      line-height: 1.7;
+      color: rgba(255,255,255,0.25);
+      line-height: 1.6;
     }
   </style>
 </head>
 <body>
 
-<div class="rainbow-bar"></div>
-
-<!-- Floating stars background -->
-<div class="stars-bg">
-  <div class="star" style="left:5%;  animation-duration:6s;  animation-delay:0s;  font-size:0.8rem;">✨</div>
-  <div class="star" style="left:15%; animation-duration:8s;  animation-delay:1s;">⭐</div>
-  <div class="star" style="left:25%; animation-duration:7s;  animation-delay:2s;  font-size:0.7rem;">✨</div>
-  <div class="star" style="left:40%; animation-duration:9s;  animation-delay:0.5s;">🌟</div>
-  <div class="star" style="left:55%; animation-duration:6s;  animation-delay:3s;  font-size:0.8rem;">✨</div>
-  <div class="star" style="left:65%; animation-duration:8s;  animation-delay:1.5s;">⭐</div>
-  <div class="star" style="left:75%; animation-duration:7s;  animation-delay:2.5s;">🌟</div>
-  <div class="star" style="left:88%; animation-duration:9s;  animation-delay:0.8s; font-size:0.7rem;">✨</div>
+<div class="top-banner">
+  <div class="page">
+    <div class="event-title">RACE TO #1</div>
+    <p class="subtitle">Grab your flags and climb the leaderboard!<br>Finish higher for bigger rewards.</p>
+    <div class="ends-badge">Ends October 14, 2026</div>
+  </div>
 </div>
 
 <div class="page">
 
-  <!-- Hero -->
-  <div class="hero">
-    <span class="big-sparkle">✨⚽✨</span>
-    <h1>Win Real Prizes Playing TikTok's New Game!</h1>
-    <p class="subtitle">There's a brand new free app from TikTok called <strong>TikTok Pro – Events</strong> and it literally gives you prizes for playing a soccer game. No catch. No cost. Just fun!</p>
+  <!-- Podium preview -->
+  <div class="podium">
+    <div class="podium-item">
+      <div class="podium-rank">No.2 – 50</div>
+      <div class="podium-stars">30M ★</div>
+    </div>
+    <div class="podium-item center">
+      <div class="podium-rank">No.1</div>
+      <div class="podium-stars">60M ★</div>
+    </div>
+    <div class="podium-item">
+      <div class="podium-rank">No.51 – 500</div>
+      <div class="podium-stars">6M ★</div>
+    </div>
   </div>
 
-  <!-- Prize pills -->
-  <div class="pills">
-    <div class="pill yellow">🏆 Up to 1M Stars</div>
-    <div class="pill pink">🛍️ $1–$100 Coupons</div>
-    <div class="pill green">👕 FIFA Jerseys</div>
-    <div class="pill blue">🎟️ World Cup Tickets</div>
-    <div class="pill purple">🎧 Headphones & More</div>
+  <!-- How to get flags -->
+  <div class="flags-section">
+    <div class="section-title">How to Get Flags</div>
+    
+    <div class="flag-row">
+      <span class="flag-label">Invite a New User</span>
+      <span class="flag-value">+40 flags</span>
+    </div>
+    <div class="flag-row">
+      <span class="flag-label">Invite Inactive 30+ days</span>
+      <span class="flag-value">+25 flags</span>
+    </div>
+    <div class="flag-row">
+      <span class="flag-label">Invite Inactive Today</span>
+      <span class="flag-value">+20 flags</span>
+    </div>
+    <div class="flag-row">
+      <span class="flag-label">Invite Existing User</span>
+      <span class="flag-value">+5 flags</span>
+    </div>
+    <div class="flag-row">
+      <span class="flag-label">Claim every 2 hours</span>
+      <span class="flag-value">+1 flag</span>
+    </div>
   </div>
 
-  <!-- How it works -->
-  <div class="steps-wrap">
-    <div class="steps-title">✨ Here's How It Works ✨</div>
+  <!-- Simple steps -->
+  <div class="steps">
+    <div class="section-title">How It Works</div>
     <div class="step">
       <div class="step-num">1</div>
-      <div class="step-text"><b>Download TikTok Pro – Events</b> for free on iPhone or Android</div>
+      <div class="step-text">Download <b>TikTok Pro</b> and open the event</div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div class="step-text"><b>Earn stars</b> by watching FIFA World Cup videos and completing easy tasks</div>
+      <div class="step-text">Collect flags by inviting friends</div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div class="step-text"><b>Play Trophy Rush</b> — kick a soccer ball and win up to 1,000,000 stars per kick!</div>
+      <div class="step-text">Climb the leaderboard — higher rank = more Stars</div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <div class="step-text"><b>Redeem your stars</b> for real coupons, jerseys, tickets and more 🎉</div>
+      <div class="step-text">Redeem Stars for Amazon Gift Cards & TikTok Shop coupons</div>
     </div>
   </div>
 
-  <!-- Game card -->
-  <div class="game-card">
-    <span class="game-sparkles">✨ 🏆 ✨</span>
-    <div class="game-title">Trophy Rush</div>
-    <p class="game-desc">Kick the ball into the goal and land on a prize square. Every single kick wins something — from <b>10,000 to 1,000,000 stars</b>. It's free, it's fast, and it's actually so fun!</p>
-  </div>
-
   <!-- CTA -->
-  <a class="cta-btn" href="https://pro.tiktok.com/t/ZT9juq9gkDG4V-cP8Ul/" target="_blank" rel="noopener">
-    ✨ Get It Free Now! ✨
+  <a class="cta-btn" href="https://pro.tiktok.com/t/ZT9A32wfVAWKV-6gWmo/" target="_blank" rel="noopener">
+    Invite Friends & Get Flags
   </a>
-  <p class="cta-note">Free to download · No credit card · iPhone & Android</p>
-
-  <div style="margin-top:24px; margin-bottom:8px; display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); border-radius:30px; padding:8px 18px;">
-    <span style="font-size:1rem;">👁️</span>
-    <span style="font-size:0.8rem; color:rgba(255,255,255,0.5);">Visitors today:</span>
-    <span id="visit-count" style="font-size:0.9rem; font-weight:700; color:#FF2D55;">...</span>
-  </div>
-
-  <script>
-    // Simple session-based counter using localStorage
-    try {
-      const today = new Date().toDateString();
-      const key = 'visit_' + today;
-      let count = parseInt(localStorage.getItem(key) || '0');
-      // Only count once per session
-      if (!sessionStorage.getItem('counted')) {
-        count++;
-        localStorage.setItem(key, count);
-        sessionStorage.setItem('counted', '1');
-      }
-      document.getElementById('visit-count').textContent = count;
-    } catch(e) {
-      document.getElementById('visit-count').textContent = '✨';
-    }
-  </script>
+  <p class="cta-note">Free to join · U.S. only · Ages 18+</p>
 
   <div class="footer">
-    TikTok Pro – Events is an official app by TikTok Ltd.<br/>
-    Stars and prizes subject to TikTok's campaign terms and availability.
+    This is an official TikTok Pro event.<br>
+    Stars can be redeemed for available rewards subject to TikTok’s terms.
   </div>
 
 </div>
+
 </body>
 </html>
