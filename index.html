@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TikTok Pro – Race to #1 Event</title>
+  <title>TikTok Pro – Race to #1</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
@@ -20,7 +20,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0b0b0f;
+      background: #08080f;
       color: #ffffff;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
@@ -32,36 +32,36 @@
       padding: 0 20px 50px;
     }
 
-    /* Header */
+    /* Header with soft glow */
     .header {
       text-align: center;
-      padding: 40px 0 30px;
+      padding: 42px 0 28px;
+      background: radial-gradient(ellipse at center top, rgba(37,244,238,0.12) 0%, transparent 70%);
     }
 
     .official-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: #a0a0a0;
+      background: rgba(37,244,238,0.08);
+      border: 1px solid rgba(37,244,238,0.25);
+      color: #25f4ee;
       font-size: 12px;
       font-weight: 500;
-      padding: 5px 12px;
+      padding: 6px 14px;
       border-radius: 20px;
       margin-bottom: 18px;
-      letter-spacing: 0.3px;
     }
 
     h1 {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 700;
       margin-bottom: 10px;
-      letter-spacing: -0.5px;
+      letter-spacing: -0.6px;
     }
 
     .subtitle {
-      font-size: 16px;
-      color: #b0b0b0;
-      margin-bottom: 6px;
+      font-size: 15.5px;
+      color: #b8b8b8;
+      margin-bottom: 4px;
     }
 
     .highlight {
@@ -75,20 +75,22 @@
       font-size: 13px;
       color: #25f4ee;
       background: rgba(37,244,238,0.1);
-      padding: 6px 14px;
+      border: 1px solid rgba(37,244,238,0.2);
+      padding: 6px 16px;
       border-radius: 20px;
     }
 
     /* Value card */
     .value-card {
-      background: #16161d;
-      border: 1px solid #2a2a35;
+      background: linear-gradient(145deg, #15151f, #12121a);
+      border: 1px solid #2a2a38;
       border-radius: 16px;
       padding: 18px;
-      margin: 24px 0;
-      font-size: 15px;
-      color: #d0d0d0;
+      margin: 22px 0 26px;
+      font-size: 14.5px;
+      color: #c8c8c8;
       text-align: center;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     .value-card strong {
@@ -99,13 +101,13 @@
     .rewards {
       display: flex;
       gap: 10px;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .reward-box {
       flex: 1;
-      background: #16161d;
-      border: 1px solid #2a2a35;
+      background: #14141e;
+      border: 1px solid #2a2a38;
       border-radius: 14px;
       padding: 16px 8px;
       text-align: center;
@@ -113,7 +115,8 @@
 
     .reward-box.main {
       border-color: #25f4ee;
-      background: rgba(37,244,238,0.06);
+      background: rgba(37,244,238,0.07);
+      box-shadow: 0 0 20px rgba(37,244,238,0.15);
     }
 
     .reward-rank {
@@ -130,11 +133,12 @@
 
     /* Sections */
     .section {
-      background: #16161d;
-      border: 1px solid #2a2a35;
+      background: #14141e;
+      border: 1px solid #2a2a38;
       border-radius: 16px;
       padding: 20px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
     }
 
     .section-title {
@@ -147,9 +151,9 @@
     .row {
       display: flex;
       justify-content: space-between;
-      padding: 11px 0;
-      border-bottom: 1px solid #2a2a35;
-      font-size: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid #2a2a38;
+      font-size: 14.5px;
     }
 
     .row:last-child {
@@ -187,7 +191,7 @@
     }
 
     .step-text {
-      font-size: 14px;
+      font-size: 14.5px;
       color: #d0d0d0;
       padding-top: 2px;
     }
@@ -196,15 +200,16 @@
     .cta {
       display: block;
       width: 100%;
-      background: #25f4ee;
+      background: linear-gradient(90deg, #25f4ee, #1ad4cf);
       color: #000;
       text-align: center;
       text-decoration: none;
       font-size: 17px;
       font-weight: 700;
-      padding: 16px;
+      padding: 17px;
       border-radius: 50px;
-      margin: 10px 0 14px;
+      margin: 12px 0 14px;
+      box-shadow: 0 6px 24px rgba(37,244,238,0.3);
     }
 
     .note {
@@ -212,7 +217,7 @@
       color: #777;
       text-align: center;
       line-height: 1.5;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
     .footer {
@@ -230,7 +235,7 @@
       <div class="official-badge">Official TikTok Pro Event</div>
       <h1>Race to #1</h1>
       <p class="subtitle">Collect flags and climb the leaderboard</p>
-      <p class="subtitle">Win <span class="highlight">Stars</span> that convert into <span class="highlight">TikTok Shop credits</span></p>
+      <p class="subtitle">Win <span class="highlight">Stars</span> → convert into <span class="highlight">TikTok Shop credits</span></p>
       <div class="ends">Ends October 14, 2026</div>
     </div>
 
