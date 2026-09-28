@@ -32,11 +32,38 @@
       padding: 0 20px 50px;
     }
 
-    /* Header with soft glow */
+    /* Header */
     .header {
       text-align: center;
-      padding: 42px 0 28px;
-      background: radial-gradient(ellipse at center top, rgba(37,244,238,0.12) 0%, transparent 70%);
+      padding: 36px 0 24px;
+      background: radial-gradient(ellipse at center top, rgba(37,244,238,0.13) 0%, transparent 70%);
+    }
+
+    /* TikTok Logo */
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .tiktok-logo {
+      width: 58px;
+      height: 58px;
+      margin-bottom: 10px;
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .logo-text span {
+      background: linear-gradient(90deg, #25f4ee, #fe2c55);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .official-badge {
@@ -46,22 +73,22 @@
       color: #25f4ee;
       font-size: 12px;
       font-weight: 500;
-      padding: 6px 14px;
+      padding: 5px 13px;
       border-radius: 20px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
     }
 
     h1 {
-      font-size: 34px;
+      font-size: 32px;
       font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: -0.6px;
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
     }
 
     .subtitle {
-      font-size: 15.5px;
-      color: #b8b8b8;
-      margin-bottom: 4px;
+      font-size: 15px;
+      color: #b0b0b0;
+      margin-bottom: 3px;
     }
 
     .highlight {
@@ -71,12 +98,12 @@
 
     .ends {
       display: inline-block;
-      margin-top: 16px;
+      margin-top: 14px;
       font-size: 13px;
       color: #25f4ee;
       background: rgba(37,244,238,0.1);
       border: 1px solid rgba(37,244,238,0.2);
-      padding: 6px 16px;
+      padding: 6px 15px;
       border-radius: 20px;
     }
 
@@ -85,12 +112,11 @@
       background: linear-gradient(145deg, #15151f, #12121a);
       border: 1px solid #2a2a38;
       border-radius: 16px;
-      padding: 18px;
-      margin: 22px 0 26px;
+      padding: 17px;
+      margin: 22px 0 24px;
       font-size: 14.5px;
       color: #c8c8c8;
       text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
 
     .value-card strong {
@@ -101,7 +127,7 @@
     .rewards {
       display: flex;
       gap: 10px;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .reward-box {
@@ -109,24 +135,24 @@
       background: #14141e;
       border: 1px solid #2a2a38;
       border-radius: 14px;
-      padding: 16px 8px;
+      padding: 15px 8px;
       text-align: center;
     }
 
     .reward-box.main {
       border-color: #25f4ee;
       background: rgba(37,244,238,0.07);
-      box-shadow: 0 0 20px rgba(37,244,238,0.15);
+      box-shadow: 0 0 18px rgba(37,244,238,0.15);
     }
 
     .reward-rank {
       font-size: 12px;
       color: #888;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
     .reward-amount {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
       color: #25f4ee;
     }
@@ -136,24 +162,23 @@
       background: #14141e;
       border: 1px solid #2a2a38;
       border-radius: 16px;
-      padding: 20px;
-      margin-bottom: 18px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      padding: 18px;
+      margin-bottom: 16px;
     }
 
     .section-title {
-      font-size: 16px;
+      font-size: 15.5px;
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       text-align: center;
     }
 
     .row {
       display: flex;
       justify-content: space-between;
-      padding: 12px 0;
+      padding: 11px 0;
       border-bottom: 1px solid #2a2a38;
-      font-size: 14.5px;
+      font-size: 14px;
     }
 
     .row:last-child {
@@ -168,7 +193,7 @@
     .step {
       display: flex;
       gap: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 13px;
       align-items: flex-start;
     }
 
@@ -177,11 +202,11 @@
     }
 
     .step-num {
-      width: 24px;
-      height: 24px;
+      width: 23px;
+      height: 23px;
       background: #25f4ee;
       color: #000;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       border-radius: 50%;
       display: flex;
@@ -191,9 +216,9 @@
     }
 
     .step-text {
-      font-size: 14.5px;
+      font-size: 14px;
       color: #d0d0d0;
-      padding-top: 2px;
+      padding-top: 1px;
     }
 
     /* CTA */
@@ -204,20 +229,20 @@
       color: #000;
       text-align: center;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16.5px;
       font-weight: 700;
-      padding: 17px;
+      padding: 16px;
       border-radius: 50px;
-      margin: 12px 0 14px;
-      box-shadow: 0 6px 24px rgba(37,244,238,0.3);
+      margin: 14px 0 12px;
+      box-shadow: 0 6px 22px rgba(37,244,238,0.28);
     }
 
     .note {
-      font-size: 13px;
+      font-size: 12.5px;
       color: #777;
       text-align: center;
       line-height: 1.5;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
     }
 
     .footer {
@@ -232,7 +257,23 @@
   <div class="container">
 
     <div class="header">
-      <div class="official-badge">Official TikTok Pro Event</div>
+      <!-- TikTok Logo -->
+      <div class="logo-wrap">
+        <svg class="tiktok-logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simplified TikTok-style note -->
+          <path d="M31.5 10.5C31.5 10.5 33.2 16.8 38.5 18.2V24.5C35.8 24.1 33.5 22.8 31.5 20.8V32.5C31.5 38.3 26.8 43 21 43C15.2 43 10.5 38.3 10.5 32.5C10.5 26.7 15.2 22 21 22C22.1 22 23.1 22.2 24.1 22.5V28.3C23.2 27.8 22.1 27.5 21 27.5C18.2 27.5 16 29.7 16 32.5C16 35.3 18.2 37.5 21 37.5C23.8 37.5 26 35.3 26 32.5V10.5H31.5Z" fill="url(#tiktokGradient)"/>
+          <defs>
+            <linearGradient id="tiktokGradient" x1="10" y1="10" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#25F4EE"/>
+              <stop offset="0.5" stop-color="#FE2C55"/>
+              <stop offset="1" stop-color="#000000"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="logo-text">TikTok <span>Pro</span></div>
+      </div>
+
+      <div class="official-badge">Official Event</div>
       <h1>Race to #1</h1>
       <p class="subtitle">Collect flags and climb the leaderboard</p>
       <p class="subtitle">Win <span class="highlight">Stars</span> → convert into <span class="highlight">TikTok Shop credits</span></p>
