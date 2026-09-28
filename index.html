@@ -12,173 +12,135 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TikTok Pro – Race to #1</title>
+  <title>Happy Harvest – Free Gifts on SHEIN</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #08080f;
-      color: #ffffff;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(180deg, #e0f7fa 0%, #b2ebf2 40%, #80deea 100%);
+      color: #333;
+      min-height: 100vh;
+      line-height: 1.45;
     }
 
-    .container {
+    .page {
       max-width: 430px;
       margin: 0 auto;
-      padding: 0 20px 50px;
+      padding: 20px 16px 50px;
     }
 
     /* Header */
     .header {
       text-align: center;
-      padding: 36px 0 24px;
-      background: radial-gradient(ellipse at center top, rgba(37,244,238,0.13) 0%, transparent 70%);
+      padding: 20px 0 10px;
     }
 
-    /* TikTok Logo */
-    .logo-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 22px;
-    }
-
-    .tiktok-logo {
-      width: 58px;
-      height: 58px;
-      margin-bottom: 10px;
-    }
-
-    .logo-text {
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.3px;
-    }
-
-    .logo-text span {
-      background: linear-gradient(90deg, #25f4ee, #fe2c55);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .official-badge {
-      display: inline-block;
-      background: rgba(37,244,238,0.08);
-      border: 1px solid rgba(37,244,238,0.25);
-      color: #25f4ee;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 5px 13px;
-      border-radius: 20px;
-      margin-bottom: 16px;
-    }
-
-    h1 {
+    .game-title {
       font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
+      font-weight: 800;
+      color: #00838f;
+      margin-bottom: 6px;
     }
 
     .subtitle {
-      font-size: 15px;
-      color: #b0b0b0;
-      margin-bottom: 3px;
+      font-size: 16px;
+      color: #006064;
+      margin-bottom: 4px;
     }
 
     .highlight {
-      color: #25f4ee;
-      font-weight: 600;
+      color: #e65100;
+      font-weight: 800;
     }
 
-    .ends {
+    .expires {
       display: inline-block;
-      margin-top: 14px;
+      margin-top: 12px;
+      background: #fff3e0;
+      color: #e65100;
       font-size: 13px;
-      color: #25f4ee;
-      background: rgba(37,244,238,0.1);
-      border: 1px solid rgba(37,244,238,0.2);
-      padding: 6px 15px;
-      border-radius: 20px;
-    }
-
-    /* Value card */
-    .value-card {
-      background: linear-gradient(145deg, #15151f, #12121a);
-      border: 1px solid #2a2a38;
-      border-radius: 16px;
-      padding: 17px;
-      margin: 22px 0 24px;
-      font-size: 14.5px;
-      color: #c8c8c8;
-      text-align: center;
-    }
-
-    .value-card strong {
-      color: #ffffff;
-    }
-
-    /* Rewards */
-    .rewards {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    .reward-box {
-      flex: 1;
-      background: #14141e;
-      border: 1px solid #2a2a38;
-      border-radius: 14px;
-      padding: 15px 8px;
-      text-align: center;
-    }
-
-    .reward-box.main {
-      border-color: #25f4ee;
-      background: rgba(37,244,238,0.07);
-      box-shadow: 0 0 18px rgba(37,244,238,0.15);
-    }
-
-    .reward-rank {
-      font-size: 12px;
-      color: #888;
-      margin-bottom: 5px;
-    }
-
-    .reward-amount {
-      font-size: 17px;
       font-weight: 700;
-      color: #25f4ee;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid #ffcc80;
     }
 
-    /* Sections */
-    .section {
-      background: #14141e;
-      border: 1px solid #2a2a38;
-      border-radius: 16px;
-      padding: 18px;
+    /* Main card */
+    .main-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 22px 18px;
+      margin: 20px 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .tree-emoji {
+      font-size: 64px;
+      margin-bottom: 10px;
+    }
+
+    .main-text {
+      font-size: 18px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .sub-text {
+      font-size: 14.5px;
+      color: #666;
       margin-bottom: 16px;
     }
 
+    .progress-bar {
+      height: 14px;
+      background: #e0f2f1;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 85%;
+      background: linear-gradient(90deg, #26a69a, #00bfa5);
+      border-radius: 20px;
+    }
+
+    .progress-label {
+      font-size: 13px;
+      color: #00897b;
+      font-weight: 700;
+    }
+
+    /* How to get water */
+    .section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 18px 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
     .section-title {
-      font-size: 15.5px;
-      font-weight: 600;
-      margin-bottom: 14px;
+      font-size: 17px;
+      font-weight: 800;
+      color: #00695c;
       text-align: center;
+      margin-bottom: 14px;
     }
 
     .row {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       padding: 11px 0;
-      border-bottom: 1px solid #2a2a38;
-      font-size: 14px;
+      border-bottom: 1px solid #e0f2f1;
+      font-size: 14.5px;
     }
 
     .row:last-child {
@@ -186,10 +148,11 @@
     }
 
     .row span:last-child {
-      color: #25f4ee;
-      font-weight: 600;
+      color: #00bfa5;
+      font-weight: 800;
     }
 
+    /* Steps */
     .step {
       display: flex;
       gap: 12px;
@@ -197,17 +160,15 @@
       align-items: flex-start;
     }
 
-    .step:last-child {
-      margin-bottom: 0;
-    }
+    .step:last-child { margin-bottom: 0; }
 
     .step-num {
-      width: 23px;
-      height: 23px;
-      background: #25f4ee;
-      color: #000;
-      font-size: 12.5px;
-      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      background: #00bfa5;
+      color: white;
+      font-size: 14px;
+      font-weight: 800;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -216,106 +177,76 @@
     }
 
     .step-text {
-      font-size: 14px;
-      color: #d0d0d0;
-      padding-top: 1px;
+      font-size: 14.5px;
+      color: #444;
+      padding-top: 2px;
     }
 
     /* CTA */
     .cta {
       display: block;
       width: 100%;
-      background: linear-gradient(90deg, #25f4ee, #1ad4cf);
-      color: #000;
+      background: linear-gradient(90deg, #00bfa5, #26a69a);
+      color: white;
       text-align: center;
       text-decoration: none;
-      font-size: 16.5px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 800;
       padding: 16px;
       border-radius: 50px;
-      margin: 14px 0 12px;
-      box-shadow: 0 6px 22px rgba(37,244,238,0.28);
+      box-shadow: 0 6px 20px rgba(0,191,165,0.35);
+      margin: 20px 0 12px;
     }
 
     .note {
-      font-size: 12.5px;
-      color: #777;
+      font-size: 13px;
+      color: #666;
       text-align: center;
       line-height: 1.5;
-      margin-bottom: 26px;
+      margin-bottom: 20px;
     }
 
     .footer {
       font-size: 11px;
-      color: #555;
+      color: #888;
       text-align: center;
-      line-height: 1.6;
+      line-height: 1.5;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <div class="page">
 
     <div class="header">
-      <!-- TikTok Logo -->
-      <div class="logo-wrap">
-        <svg class="tiktok-logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Simplified TikTok-style note -->
-          <path d="M31.5 10.5C31.5 10.5 33.2 16.8 38.5 18.2V24.5C35.8 24.1 33.5 22.8 31.5 20.8V32.5C31.5 38.3 26.8 43 21 43C15.2 43 10.5 38.3 10.5 32.5C10.5 26.7 15.2 22 21 22C22.1 22 23.1 22.2 24.1 22.5V28.3C23.2 27.8 22.1 27.5 21 27.5C18.2 27.5 16 29.7 16 32.5C16 35.3 18.2 37.5 21 37.5C23.8 37.5 26 35.3 26 32.5V10.5H31.5Z" fill="url(#tiktokGradient)"/>
-          <defs>
-            <linearGradient id="tiktokGradient" x1="10" y1="10" x2="40" y2="40" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#25F4EE"/>
-              <stop offset="0.5" stop-color="#FE2C55"/>
-              <stop offset="1" stop-color="#000000"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <div class="logo-text">TikTok <span>Pro</span></div>
-      </div>
-
-      <div class="official-badge">Official Event</div>
-      <h1>Race to #1</h1>
-      <p class="subtitle">Collect flags and climb the leaderboard</p>
-      <p class="subtitle">Win <span class="highlight">Stars</span> → convert into <span class="highlight">TikTok Shop credits</span></p>
-      <div class="ends">Ends October 14, 2026</div>
+      <div class="game-title">🌳 SHEIN:Happy Harvest 🌳</div>
+      <p class="subtitle">Water the tree & ship <span class="highlight">5 FREE GIFTS</span></p>
+      <div class="expires">⏳ Expires in 3 days</div>
     </div>
 
-    <div class="value-card">
-      Players are earning large amounts of <strong>Stars</strong> that can be redeemed for real <strong>TikTok Shop credits</strong> and other rewards. Completely free to join.
-    </div>
-
-    <div class="rewards">
-      <div class="reward-box">
-        <div class="reward-rank">No.2 – 50</div>
-        <div class="reward-amount">30M ★</div>
+    <div class="main-card">
+      <div class="tree-emoji">🍊Shein Mini Game🌳</div>
+      <div class="main-text">Your free gifts are almost ready!</div>
+      <div class="sub-text">Keep watering to unlock and ship 5 free items from SHEIN</div>
+      
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
       </div>
-      <div class="reward-box main">
-        <div class="reward-rank">No.1</div>
-        <div class="reward-amount">60M ★</div>
-      </div>
-      <div class="reward-box">
-        <div class="reward-rank">No.51 – 500</div>
-        <div class="reward-amount">6M ★</div>
-      </div>
+      <div class="progress-label">Almost there – keep going!</div>
     </div>
 
     <div class="section">
-      <div class="section-title">How to earn flags</div>
+      <div class="section-title">How to get more water</div>
       <div class="row">
-        <span>Invite a new user</span>
-        <span>+40 flags</span>
+        <span>Invite friends</span>
+        <span>+ Water</span>
       </div>
       <div class="row">
-        <span>Invite inactive 30+ days</span>
-        <span>+25 flags</span>
+        <span>Daily check-in</span>
+        <span>+ Water</span>
       </div>
       <div class="row">
-        <span>Invite inactive today</span>
-        <span>+20 flags</span>
-      </div>
-      <div class="row">
-        <span>Invite existing user</span>
-        <span>+5 flags</span>
+        <span>Get water tasks</span>
+        <span>+ Water</span>
       </div>
     </div>
 
@@ -323,34 +254,35 @@
       <div class="section-title">How it works</div>
       <div class="step">
         <div class="step-num">1</div>
-        <div class="step-text">Open TikTok Pro using the button below</div>
+        <div class="step-text">Open SHEIN and search “Happy Harvest”</div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
-        <div class="step-text">Join the Race to #1 event</div>
+        <div class="step-text">Water your tree every day</div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div class="step-text">Invite friends to collect flags and rise in rank</div>
+        <div class="step-text">Invite friends for extra water</div>
       </div>
       <div class="step">
         <div class="step-num">4</div>
-        <div class="step-text">Redeem your Stars for TikTok Shop credits</div>
+        <div class="step-text">Reach Lv.5 and ship 5 free gifts</div>
       </div>
     </div>
 
-    <a class="cta" href="https://pro.tiktok.com/t/ZT9A32wfVAWKV-6gWmo/" target="_blank" rel="noopener">
-      Join the Event Free
+    <!-- Replace the href with your real SHEIN invite link -->
+    <a class="cta" href="YOUR_SHEIN_INVITE_LINK_HERE" target="_blank" rel="noopener">
+      Open Happy Harvest & Get Free Gifts
     </a>
 
     <p class="note">
-      Free to join · U.S. residents only · Ages 18+<br>
-      Stars can be redeemed for TikTok Shop credits
+      Free to play · Available in the SHEIN app<br>
+      Water your tree to unlock real free gifts
     </p>
 
     <div class="footer">
-      This is an official TikTok Pro event.<br>
-      Rewards are subject to TikTok’s terms and availability.
+      This is a SHEIN mini-game promotion.<br>
+      Gifts are subject to SHEIN’s terms and availability.
     </div>
 
   </div>
