@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="background:#0A0A1A;">
+<html lang="en" style="background:#07071A;">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RDM0YNJ9L3"></script>
@@ -12,7 +12,7 @@
 
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Race to #1 – Win Stars & Amazon Gift Cards!</title>
+  <title>Race to #1 – Win Stars & TikTok Shop Credits!</title>
   
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Inter:wght@400;600;700;900&display=swap');
@@ -20,7 +20,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     html, body {
-      background: #0A0A1A !important;
+      background: #07071A !important;
       font-family: 'Inter', sans-serif;
       color: #fff;
       min-height: 100vh;
@@ -34,95 +34,113 @@
       text-align: center;
     }
 
-    /* Top banner */
+    /* Top Banner */
     .top-banner {
-      background: linear-gradient(180deg, #1a0a3a 0%, #0A0A1A 100%);
-      padding: 28px 16px 20px;
+      background: 
+        radial-gradient(ellipse at 50% 0%, rgba(0,255,157,0.2) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 30%, rgba(0,180,255,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 85% 20%, rgba(200,80,255,0.12) 0%, transparent 50%),
+        linear-gradient(180deg, #0f0c29 0%, #07071A 100%);
+      padding: 38px 16px 30px;
       position: relative;
       overflow: hidden;
     }
 
     .event-title {
       font-family: 'Fredoka One', cursive;
-      font-size: clamp(2.4rem, 11vw, 3.2rem);
+      font-size: clamp(2.7rem, 12vw, 3.5rem);
       line-height: 1.05;
-      background: linear-gradient(90deg, #00FF9D, #00E0FF, #FF00E5);
+      background: linear-gradient(90deg, #00FF9D, #00E0FF, #C77DFF, #00FF9D);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 8px;
-      text-shadow: 0 0 30px rgba(0,255,157,0.4);
+      margin-bottom: 12px;
+      text-shadow: 0 0 40px rgba(0,255,157,0.5);
+      animation: shine 4s linear infinite;
+    }
+
+    @keyframes shine {
+      to { background-position: 200% center; }
     }
 
     .subtitle {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.75);
-      line-height: 1.5;
-      margin-bottom: 14px;
+      font-size: 1.02rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      color: #00FF9D;
+      font-weight: 700;
     }
 
     .ends-badge {
       display: inline-block;
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
+      background: rgba(0,255,157,0.12);
+      border: 1px solid rgba(0,255,157,0.4);
       border-radius: 30px;
-      padding: 6px 16px;
-      font-size: 0.8rem;
+      padding: 7px 18px;
+      font-size: 0.82rem;
       color: #00FF9D;
-      margin-bottom: 20px;
+      font-weight: 600;
+      margin-top: 14px;
+      box-shadow: 0 0 20px rgba(0,255,157,0.15);
     }
 
-    /* Rewards podium */
+    /* Podium */
     .podium {
       display: flex;
       justify-content: center;
       align-items: flex-end;
       gap: 10px;
-      margin: 24px 0 28px;
+      margin: 30px 0 28px;
     }
 
     .podium-item {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.05);
       border-radius: 16px;
       padding: 14px 10px;
       width: 30%;
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .podium-item.center {
-      background: linear-gradient(180deg, rgba(0,255,157,0.15), rgba(0,0,0,0.3));
-      border-color: rgba(0,255,157,0.4);
-      transform: scale(1.08);
+      background: linear-gradient(180deg, rgba(0,255,157,0.2), rgba(0,0,0,0.4));
+      border: 1px solid rgba(0,255,157,0.5);
+      transform: scale(1.12);
       padding: 18px 10px;
+      box-shadow: 0 0 30px rgba(0,255,157,0.25);
     }
 
     .podium-rank {
       font-size: 0.75rem;
-      color: rgba(255,255,255,0.6);
+      color: rgba(255,255,255,0.55);
       margin-bottom: 6px;
     }
 
     .podium-stars {
       font-family: 'Fredoka One', cursive;
-      font-size: 1.15rem;
+      font-size: 1.25rem;
       color: #00FF9D;
     }
 
-    /* Flag rewards grid */
+    /* Flag rewards */
     .flags-section {
-      background: #12122A;
+      background: #12122E;
       border-radius: 20px;
-      padding: 20px 16px;
+      padding: 22px 16px;
       margin-bottom: 24px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.07);
       text-align: left;
     }
 
     .section-title {
       font-family: 'Fredoka One', cursive;
-      font-size: 1.25rem;
+      font-size: 1.3rem;
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       color: #fff;
     }
 
@@ -130,37 +148,37 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 12px 0;
+      padding: 13px 0;
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     .flag-row:last-child { border-bottom: none; }
 
     .flag-label {
-      font-size: 0.9rem;
-      color: rgba(255,255,255,0.8);
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.82);
     }
 
     .flag-value {
       font-weight: 700;
       color: #00FF9D;
-      font-size: 1rem;
+      font-size: 1.05rem;
     }
 
-    /* How it works */
+    /* Steps */
     .steps {
-      background: #12122A;
+      background: #12122E;
       border-radius: 20px;
-      padding: 20px 16px;
+      padding: 22px 16px;
       margin-bottom: 28px;
-      border: 1px solid rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.07);
       text-align: left;
     }
 
     .step {
       display: flex;
       gap: 12px;
-      margin-bottom: 14px;
+      margin-bottom: 15px;
       align-items: flex-start;
     }
 
@@ -181,16 +199,16 @@
     }
 
     .step-text {
-      font-size: 0.88rem;
-      color: rgba(255,255,255,0.8);
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.85);
       line-height: 1.45;
     }
 
-    /* Big CTA */
+    /* CTA */
     .cta-btn {
       display: block;
       width: 100%;
-      padding: 18px;
+      padding: 19px;
       background: linear-gradient(90deg, #00FF9D, #00E0FF);
       color: #000;
       font-family: 'Fredoka One', cursive;
@@ -198,17 +216,18 @@
       text-align: center;
       text-decoration: none;
       border-radius: 50px;
-      box-shadow: 0 8px 30px rgba(0,255,157,0.35);
-      margin-bottom: 12px;
+      box-shadow: 0 8px 35px rgba(0,255,157,0.45);
+      margin-bottom: 14px;
       transition: transform 0.15s;
     }
 
     .cta-btn:active { transform: scale(0.97); }
 
     .cta-note {
-      font-size: 0.75rem;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 30px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 32px;
+      line-height: 1.5;
     }
 
     .footer {
@@ -223,14 +242,20 @@
 <div class="top-banner">
   <div class="page">
     <div class="event-title">RACE TO #1</div>
-    <p class="subtitle">Grab your flags and climb the leaderboard!<br>Finish higher for bigger rewards.</p>
+    <p class="subtitle">
+      Collect flags • Climb the leaderboard<br>
+      Win up to <span class="highlight">60 Million Stars</span>
+    </p>
+    <p class="subtitle" style="margin-top:6px; font-size:0.95rem;">
+      Convert your Stars into <span class="highlight">TikTok Shop credits</span> & rewards!
+    </p>
     <div class="ends-badge">Ends October 14, 2026</div>
   </div>
 </div>
 
 <div class="page">
 
-  <!-- Podium preview -->
+  <!-- Podium -->
   <div class="podium">
     <div class="podium-item">
       <div class="podium-rank">No.2 – 50</div>
@@ -248,7 +273,7 @@
 
   <!-- How to get flags -->
   <div class="flags-section">
-    <div class="section-title">How to Get Flags</div>
+    <div class="section-title">How to Get Flags Fast</div>
     
     <div class="flag-row">
       <span class="flag-label">Invite a New User</span>
@@ -272,36 +297,39 @@
     </div>
   </div>
 
-  <!-- Simple steps -->
+  <!-- Steps -->
   <div class="steps">
     <div class="section-title">How It Works</div>
     <div class="step">
       <div class="step-num">1</div>
-      <div class="step-text">Download <b>TikTok Pro</b> and open the event</div>
+      <div class="step-text">Download <b>TikTok Pro</b> using the link below</div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div class="step-text">Collect flags by inviting friends</div>
+      <div class="step-text">Invite friends to collect flags and climb the ranks</div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div class="step-text">Climb the leaderboard — higher rank = more Stars</div>
+      <div class="step-text">Earn massive Stars based on your final ranking</div>
     </div>
     <div class="step">
       <div class="step-num">4</div>
-      <div class="step-text">Redeem Stars for Amazon Gift Cards & TikTok Shop coupons</div>
+      <div class="step-text">Convert your Stars into <b>TikTok Shop credits</b> and other rewards</div>
     </div>
   </div>
 
   <!-- CTA -->
   <a class="cta-btn" href="https://pro.tiktok.com/t/ZT9A32wfVAWKV-6gWmo/" target="_blank" rel="noopener">
-    Invite Friends & Get Flags
+    Start Collecting Flags Now
   </a>
-  <p class="cta-note">Free to join · U.S. only · Ages 18+</p>
+  <p class="cta-note">
+    Free to join · U.S. residents only · Ages 18+<br>
+    Stars can be redeemed for TikTok Shop credits & more
+  </p>
 
   <div class="footer">
     This is an official TikTok Pro event.<br>
-    Stars can be redeemed for available rewards subject to TikTok’s terms.
+    Rewards are subject to TikTok’s terms and availability.
   </div>
 
 </div>
